@@ -12,20 +12,20 @@ const prodConfig = {
       assetNameRegExp: /\.css$/g,
       cssProcessor: cssnano,
     }),
-    // new HtmlWebpackExternalsPlugin({
-    //   externals: [
-    //     {
-    //       module: 'react',
-    //       entry: 'http://now8.gtimg.com/now/lib/16.8.6/react.min.js', // cdn上react的地址，或者本地的文件
-    //       global: 'React',
-    //     },
-    //     {
-    //       module: 'react-dom',
-    //       entry: 'http://now8.gtimg.com/now/lib/16.8.6/react-dom.min.js', // cdn上react的地址，或者本地的文件也可以
-    //       global: 'ReactDOM',
-    //     },
-    //   ],
-    // }),
+    new HtmlWebpackExternalsPlugin({
+      externals: [
+        {
+          module: 'react',
+          entry: 'http://now8.gtimg.com/now/lib/16.8.6/react.min.js', // cdn上react的地址，或者本地的文件
+          global: 'React',
+        },
+        {
+          module: 'react-dom',
+          entry: 'http://now8.gtimg.com/now/lib/16.8.6/react-dom.min.js', // cdn上react的地址，或者本地的文件也可以
+          global: 'ReactDOM',
+        },
+      ],
+    }),
   ],
   optimization: {
     splitChunks: {
